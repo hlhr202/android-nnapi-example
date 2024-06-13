@@ -1,0 +1,30 @@
+[package]
+name = "android-nnapi-example"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[target.'cfg(target_os = "android")'.dependencies]
+jni = "0.21.1"
+libc = "0.2.155"
+log = "0.4.21"
+ndk = { version = "0.9.0", features = ["api-level-33"] }
+ndk-context = "0.1.1"
+android_logger = "0.13.3"
+android-activity = { version = "0.6.0", features = ["native-activity"] }
+nnapi = { git = "https://github.com/hlhr202/nnapi.git", branch = "feature/api-level-33" }
+# nnapi = { path = "../../nnapi/nnapi" }
+nnapi-sys = { git = "https://github.com/hlhr202/nnapi.git", branch = "feature/api-level-33", features = [
+    "api-level-33",
+] }
+# nnapi-sys = { path = "../../nnapi/nnapi-sys", features = [
+#     "api-level-33",
+# ] }
+
+[lib]
+crate-type = ["cdylib"]
+
+[package.metadata.android.sdk]
+min_sdk_version = 27
+target_sdk_version = 33
