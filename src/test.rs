@@ -1,4 +1,4 @@
-use crate::{context::ExecutionContext, tensor::Tensor};
+use crate::{context::ExecutionContext, operators::*, tensor::Tensor};
 use nnapi::Device;
 
 pub fn test_nn() -> nnapi::Result<()> {

@@ -3,6 +3,7 @@ mod context;
 mod primitives;
 mod tensor;
 mod test;
+mod operators;
 
 #[no_mangle]
 fn android_main(_app: AndroidApp) {
